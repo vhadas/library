@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+#list{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+#title{
+    font:bold;
+}
+
+.book{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: solid 0.5px rgb(135, 135, 135);
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.book div{
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.book div button{
+    justify-content: space-between;
+}
+
+
+
+#show-book{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+#book-title{
+    background-color: gray;
+    width: 100%;
+}
+
+#book-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#left{
+    flex: 3;
+}
+
+#right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#price{
+    width: 100%;
+    height: 70px;
+}
+
+#rateControl {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#rateControl button {
+    background-color: #6A5ACD; /* צבע סגול */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#rateControl button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#rateValue {
+    padding: 0 15px;
+    background-color: #F8F8F8;
+    border: 1px solid #D3D3D3;
+    min-width: 30px;
+    text-align: center;
+    font-size: 18px;
+}
