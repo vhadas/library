@@ -140,3 +140,6 @@ let GBooks = [
         "image": "https://www.booknet.co.il/images/site/products/opt/241256_174_auto.jpg"
     }
 ]
+
+
+const booksData =  [...GBooks];

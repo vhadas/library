@@ -15,6 +15,9 @@ function createBook(name,price,rating,image){
         "image": image
     }
     GBooks.push(newBook);
+    saveToLocalStorage();
+    loadFromLocalStorage();
+    renderList(getBooks());
 }
 
 function updateBook(id, name, price, rating, image){
@@ -25,11 +28,15 @@ function updateBook(id, name, price, rating, image){
         book.image = image || book.image; 
         book.rating = rating || book.rating;
     }
-    renderBook(book);
+    saveToLocalStorage();
+    loadFromLocalStorage();
+    renderList(getBooks());
+    // renderBook(book);
 }
 
 function deleteBook(id){
     GBooks = GBooks.filter(book => book.id !== id);
+    saveToLocalStorage();
     onInit();
 }
 
@@ -39,8 +46,28 @@ function shoeBook(id){
 }
 
 function onInit() {
+    if(localStorage.getItem('books')){
+        loadFromLocalStorage();
+    }
+    else{
+        saveToLocalStorage();
+    }
     renderList(getBooks());
 }
 
+function saveToLocalStorage(){
+    localStorage.setItem('books', JSON.stringify(GBooks));
+}
+
+function loadFromLocalStorage(){
+    let books = JSON.parse(localStorage.getItem('books'));
+    if(books) GBooks = books;
+}
+
+function loadData(){
+    localStorage.setItem('books', JSON.stringify(booksData));
+    loadFromLocalStorage();
+    renderList(getBooks());
+}
 
 onInit();
